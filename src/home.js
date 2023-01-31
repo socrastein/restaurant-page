@@ -1,4 +1,4 @@
-import knife from './pics/knife.jpg';
+
 
 // import Picture from './picture.jpg';
 
@@ -8,17 +8,24 @@ import knife from './pics/knife.jpg';
 // element.appendChild(myPicture)
 
 function loadHome(){
-  const root = document.getElementById('root');
-  const knifePic = new Image();
-  knifePic.src = knife;
-
+  const pageHolder = document.getElementById('pageHolder');
+  
+  
   const page = document.createElement('div');
-  page.setAttribute("class", "flexColumn");
+  page.setAttribute("class", "flexColumn homePage");
+  page.setAttribute("id", "homePage");
 
-  root.appendChild(page);
+  const welcome = document.createElement('div');
+  welcome.setAttribute("class", "pageHeader");
+  welcome.innerHTML = "Let us treat you to a fine-dining experience you'll never forget"
+  page.appendChild(welcome);
 
+  const list = document.createElement('ul');
 
-
+  
+  
+  
+  pageHolder.appendChild(page);
 }
 
 export default loadHome;

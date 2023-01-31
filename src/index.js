@@ -1,5 +1,6 @@
 import "./style.css";
 import gitLogo from "./pics/github.svg";
+import knife from './pics/knife.jpg';
 
 // import Picture from './picture.jpg';
 
@@ -17,12 +18,12 @@ const root = document.getElementById("root");
 // Setup the header and subheader with restaurant name and tagline. Underneath, the page tabs
 // will be nested inside a container div. These elements are the only HTML other than the footer
 // that aren't loaded dynamically by a call to a page module
-const pageHeader = document.createElement("div");
+const pageHeader = document.createElement("h1");
 pageHeader.setAttribute("class", "header flexRow");
 pageHeader.innerHTML = 'Chez Matthieu'
 root.appendChild(pageHeader);
 
-const subHeader = document.createElement("p");
+const subHeader = document.createElement("h2");
 subHeader.setAttribute("class", "subHeader flexRow");
 subHeader.innerHTML = 'Great food is our love language';
 root.appendChild(subHeader);
@@ -38,6 +39,7 @@ tabHome.innerHTML = "Home";
 tabHome.setAttribute("id", "tabHome");
 tabHome.setAttribute("class", "tabButton tabCurrent");
 tabHome.addEventListener("click", () => {
+  clearPageHolder();
   loadHome();
   tabHome.setAttribute("class", "tabButton tabCurrent");
   tabAbout.setAttribute("class", "tabButton");
@@ -52,6 +54,7 @@ tabAbout.innerHTML = "About";
 tabAbout.setAttribute("id", "tabAbout");
 tabAbout.setAttribute("class", "tabButton");
 tabAbout.addEventListener("click", () => {
+  clearPageHolder();
   loadAbout();
   tabAbout.setAttribute("class", "tabButton tabCurrent");
   tabHome.setAttribute("class", "tabButton");
@@ -66,6 +69,7 @@ tabMenu.innerHTML = "Menu";
 tabMenu.setAttribute("id", "tabMenu");
 tabMenu.setAttribute("class", "tabButton");
 tabMenu.addEventListener("click", () => {
+  clearPageHolder();
   loadMenu();
   tabMenu.setAttribute("class", "tabButton tabCurrent");
   tabAbout.setAttribute("class", "tabButton");
@@ -73,12 +77,26 @@ tabMenu.addEventListener("click", () => {
 });
 tabBar.appendChild(tabMenu);
 
+
+// This is the main container in which each module's page elements will be loaded and unloaded
+// as tabs are selected
+const pageHolder = document.createElement("div");
+pageHolder.setAttribute("id", "pageHolder");
+pageHolder.setAttribute("class", "flexColumn");
+root.appendChild(pageHolder);
+
+// Empties the pageHolder node so that new content from module can replace it
+// Runs everytime a page tab is clicked
+const clearPageHolder = () => {
+  pageHolder.innerHTML = '';
+}
+
 // Create footer with attribution and GitHub logo at the bottom of home page, the only HTML other
 // than the page tabs that is not loaded dynamically by a call to a module
-const footer = document.createElement("div");
+const footer = document.querySelector("footer");
 footer.setAttribute("class", "footer flexRow");
-root.appendChild(footer);
 const footerText = document.createElement("p");
+footerText.setAttribute("class", "footerText");
 footerText.innerHTML = "Copyright © 2023 Matt Talley (socrastein)";
 const footerLogo = new Image();
 footerLogo.src = gitLogo;
