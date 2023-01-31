@@ -2,33 +2,70 @@
   font-family: 'Ubuntu', sans-serif;
 }
 
-body {
+body, p {
   margin: 0;
 }
 
-.tabBar, .footer {
+.flexRow {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
   margin: 0 auto;
 }
 
-.tabBar {
-  background-color: #212121;
-  padding: 1rem;
+.flexColumn {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
 
+.header, .subHeader, .tabBar {
+  background-color: #212121;
+}
+
+.header, .subHeader, .tabButton {
+  color: #f5f5f5;
+}
+
+.header {
+  font-size: 3rem;
+  font-style: italic;
+  font-weight: 800;
+  padding: 2rem 0 1rem 0;
+  letter-spacing: 3px;
+}
+
+.subHeader {
+  font-size: 1.5rem;
+  padding: 0 0 1rem 0;
+}
+
+.tabBar {
+  padding: 1rem 1rem 0 1rem;
+  gap: 2rem;
 }
 
 .tabButton {
-  color: #f5f5f5;
   font-size: 2rem;
   font-weight: 800;
+  padding: .5rem 1rem 0 1rem;
+}
+
+.tabButton:hover:not(.tabCurrent) {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.tabCurrent {
+  border-style: solid;
+  border-color: #f5f5f5;
+  border-radius: 12px 12px 0 0;
+  border-bottom: none;
 }
 
 
 .footer {
-
+  gap: 1rem;
 }
 
 #gitLogo {
