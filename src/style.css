@@ -75,14 +75,12 @@ body {
 
 }
 
-.homePage {
-  background-image: linear-gradient(
-    rgba(0,0,0,.3),
-    rgba(0,0,0,.3),
-    url(./pics/knife.jpg));
-
-    height: 500px;
-    width: 500px;
+#homePage {
+  background-image: linear-gradient(rgba(0,0,0,1),rgba(0,0,0,.3)),url('./pics/knife.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 500px;
 }
 
 

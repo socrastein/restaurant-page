@@ -1,5 +1,3 @@
-
-
 // import Picture from './picture.jpg';
 
 // Add the image to an existing div
@@ -21,6 +19,25 @@ function loadHome(){
   page.appendChild(welcome);
 
   const list = document.createElement('ul');
+  page.appendChild(list);
+
+  const list1 = document.createElement('li');
+  list1.innerHTML = 'Only the freshest, delicious ingredients'
+  list.appendChild(list1);
+  const list2 = document.createElement('li');
+  list2.innerHTML = 'Only the freshest ingredients'
+  list.appendChild(list2);
+  const list3 = document.createElement('li');
+  list3.innerHTML = 'Only the freshest ingredients'
+  list.appendChild(list3);
+  const list4 = document.createElement('li');
+  list4.innerHTML = 'Only the freshest ingredients'
+  list.appendChild(list4);
+  const list5 = document.createElement('li');
+  list5.innerHTML = 'Only the freshest ingredients'
+  list.appendChild(list5);
+
+ 
 
   
   

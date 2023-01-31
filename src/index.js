@@ -1,6 +1,5 @@
 import "./style.css";
 import gitLogo from "./pics/github.svg";
-import knife from './pics/knife.jpg';
 
 // import Picture from './picture.jpg';
 
