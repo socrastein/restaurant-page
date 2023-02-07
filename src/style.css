@@ -1,10 +1,12 @@
 :root {
   --large-font: 2rem;
+  --page-width: 80%;
 }
 
 @media screen and (max-width: 500px) {
   :root {
     --large-font: 1.2rem;
+    --page-width: 96%;
   }
 }
 
@@ -97,7 +99,7 @@ body {
 #homePage, #aboutPage, #menuPage {
   margin: 0;
   height: 900px;
-  width: 90%;
+  width: var(--page-width);
   background-repeat: no-repeat;
   border-radius: 30px;
   background-position: top;
@@ -156,7 +158,6 @@ li {
 
 #menuCheesecake {
   background-image: url(./pics/cheesecake.jpg);
-  background-position: top;
 }
 
 
