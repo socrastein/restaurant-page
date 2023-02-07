@@ -1,5 +1,11 @@
-::root {
+:root {
   --large-font: 2rem;
+}
+
+@media screen and (max-width: 500px) {
+  :root {
+    --large-font: 1.2rem;
+  }
 }
 
 * {
@@ -56,7 +62,7 @@ body {
 .tabBar {
   display: flex;
   padding: 1rem 1rem 0 1rem;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .tabButton {
@@ -83,33 +89,99 @@ body {
 }
 
 .pageHeader {
-
+  margin: 2rem;
+  font-size: 2rem;
+  text-align: center;
 }
 
 #homePage, #aboutPage, #menuPage {
   margin: 0;
-  height: 650px;
-  width: 100%;
-  background-size: cover;
+  height: 900px;
+  width: 90%;
   background-repeat: no-repeat;
+  border-radius: 30px;
   background-position: top;
+  background-size: cover;
+  padding: 2rem 0;
 }
 
 #homePage {
   background-image: linear-gradient(rgba(0,0,0,1),rgba(0,0,0,.3)),url(./pics/knife.jpg);
 }
 
+#aboutPage {
+  background-image: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.1)),url(./pics/matt.JPG);
+}
+
 ul {
   font-size: 1.5rem;
+}
+li {
+  margin: .8rem 0;
+}
+
+#menuPage {
+  background-image: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.5)),url(./pics/spices.jpg);
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.menuItem p {
+  padding: 8px;
+  background-image: linear-gradient(rgba(33,33,33,1),rgba(33,33,33,.8));
+  border-radius: 10px;
+}
+
+#menuMac, #menuEnchilada, #menuCheesecake {
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  height: 300px;
+  width: 300px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  box-shadow: 0 0 24px 12px black;
+}
+
+#menuMac {
+  background-image: url(./pics/mac.jpg);
+}
+
+#menuEnchilada {
+  background-image: url(./pics/enchilada.jpg);
+}
+
+#menuCheesecake {
+  background-image: url(./pics/cheesecake.jpg);
+  background-position: top;
 }
 
 
 .footer {
   gap: 1rem;
+  padding: 1rem;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0) scale(1);
+  }
+  
+  to {
+    transform: rotate(720deg) scale(1.2);
+  }
 }
 
 #gitLogo {
   height: 2rem;
   width: 2rem;
   filter: invert(100%);
+}
+
+#gitLogo:hover {
+  animation: rotation .8s;
+  animation-fill-mode: forwards;
 }

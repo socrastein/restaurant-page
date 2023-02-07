@@ -19,12 +19,12 @@ const root = document.getElementById("root");
 // that aren't loaded dynamically by a call to a page module
 const pageHeader = document.createElement("h1");
 pageHeader.setAttribute("class", "header flexRow");
-pageHeader.innerHTML = 'Chez Matthieu'
+pageHeader.innerHTML = "Chez Matthieu";
 root.appendChild(pageHeader);
 
 const subHeader = document.createElement("h2");
 subHeader.setAttribute("class", "subHeader flexRow");
-subHeader.innerHTML = 'Great food is our love language';
+subHeader.innerHTML = "Great food is our love language";
 root.appendChild(subHeader);
 
 const tabBar = document.createElement("div");
@@ -76,7 +76,6 @@ tabMenu.addEventListener("click", () => {
 });
 tabBar.appendChild(tabMenu);
 
-
 // This is the main container in which each module's page elements will be loaded and unloaded
 // as tabs are selected
 const pageHolder = document.createElement("div");
@@ -87,8 +86,8 @@ root.appendChild(pageHolder);
 // Empties the pageHolder node so that new content from module can replace it
 // Runs everytime a page tab is clicked
 const clearPageHolder = () => {
-  pageHolder.innerHTML = '';
-}
+  pageHolder.innerHTML = "";
+};
 
 // Create footer with attribution and GitHub logo at the bottom of home page, the only HTML other
 // than the page tabs that is not loaded dynamically by a call to a module
@@ -97,11 +96,16 @@ footer.setAttribute("class", "footer flexRow");
 const footerText = document.createElement("p");
 footerText.setAttribute("class", "footerText");
 footerText.innerHTML = "Copyright © 2023 Matt Talley (socrastein)";
+const footerLink = document.createElement("a");
+footerLink.setAttribute("href", "https://github.com/socrastein")
+footerLink.setAttribute("target", "_blank");
 const footerLogo = new Image();
 footerLogo.src = gitLogo;
 footerLogo.setAttribute("id", "gitLogo");
+footerLink.appendChild(footerLogo);
+
 footer.appendChild(footerText);
-footer.appendChild(footerLogo);
+footer.appendChild(footerLink);
 
 // Initial call to home module to append page content to the root div
 loadHome();
