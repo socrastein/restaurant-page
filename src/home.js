@@ -7,7 +7,7 @@
 
 function loadHome(){
   const pageHolder = document.getElementById('pageHolder');
-  
+  pageHolder.style.backgroundImage = "";
   
   const page = document.createElement('div');
   page.setAttribute("class", "flexColumn homePage");
@@ -25,7 +25,7 @@ function loadHome(){
   list1.innerHTML = 'Only the freshest, delicious ingredients'
   list.appendChild(list1);
   const list2 = document.createElement('li');
-  list2.innerHTML = 'Only the freshest ingredients'
+  list2.innerHTML = 'Exceptional food safety standards'
   list.appendChild(list2);
   const list3 = document.createElement('li');
   list3.innerHTML = 'Only the freshest ingredients'

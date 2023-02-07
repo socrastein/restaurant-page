@@ -1,3 +1,7 @@
+::root {
+  --large-font: 2rem;
+}
+
 * {
   font-family: 'Ubuntu', sans-serif;
   color: #f5f5f5;
@@ -9,6 +13,7 @@ body, p {
 
 h1, h2 {
   font-weight: normal;
+  text-align: center;
 }
 
 body {
@@ -49,12 +54,14 @@ body {
 }
 
 .tabBar {
+  display: flex;
   padding: 1rem 1rem 0 1rem;
   gap: 2rem;
 }
 
 .tabButton {
-  font-size: 2rem;
+  flex-shrink: 1;
+  font-size: var(--large-font);
   font-weight: 800;
   padding: .5rem 1rem 0 1rem;
 }
@@ -71,16 +78,29 @@ body {
   border-bottom: none;
 }
 
+#pageHolder {
+  margin: 0;
+}
+
 .pageHeader {
 
 }
 
-#homePage {
-  background-image: linear-gradient(rgba(0,0,0,1),rgba(0,0,0,.3)),url('./pics/knife.jpg');
+#homePage, #aboutPage, #menuPage {
+  margin: 0;
+  height: 650px;
+  width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
-  height: 500px;
+  background-position: top;
+}
+
+#homePage {
+  background-image: linear-gradient(rgba(0,0,0,1),rgba(0,0,0,.3)),url(./pics/knife.jpg);
+}
+
+ul {
+  font-size: 1.5rem;
 }
 
 
